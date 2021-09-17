@@ -4,12 +4,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boilerplate</title>
+  <title>Rock Paper Scissors</title>
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  
+  <!-- rock, paper, scissors, clap hand icons -->
+  <!-- <span class="hand">&#128074;</span>
+  <span class="hand">&#9995;</span>
+  <span class="hand">&#129310;</span>
+  <span class="hand">&#128079;</span> -->
+
+  <main class="main">
+    <!-- Welcome Screen -->
+    <section class="main__welcome">
+      <form class="main__welcome__userForm" autocomplete="off">
+        <div class="main__welcome__userForm__form-control">
+          <label for="username" class="main__welcome__userForm__form-control__label">Username</label>
+          <input type="text" class="main__welcome__userForm__form-control__input" id="username" name="username" placeholder="Enter a username...">
+        </div>
+      </form>
+        <button class="main__welcome__btn">
+          <span class="main__welcome__btn__text">Start Game</span>
+        </button>
+    </section>
+  </main>
   
 
   <script src="./assets/bundle.js"></script>

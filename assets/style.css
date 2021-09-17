@@ -14,3 +14,90 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
 }
+
+.main {
+  height: 100vh;
+  background: #ffdfdf;
+  position: relative;
+}
+.main__welcome {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 60rem;
+  height: 80vh;
+  padding: 1rem;
+  background: white;
+  border-radius: 1rem;
+}
+.main__welcome__userForm {
+  width: 100%;
+  padding: 0.5rem;
+  height: 40vh;
+}
+.main__welcome__userForm__form-control {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__welcome__userForm__form-control::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  background: #000;
+  width: 75%;
+  height: 0.1rem;
+}
+.main__welcome__userForm__form-control__label {
+  position: relative;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+.main__welcome__userForm__form-control__input {
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.main__welcome__btn {
+  position: relative;
+  border: none;
+  width: 25rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  background: rgba(201, 173, 121, 0.5);
+}
+.main__welcome__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-25rem);
+  width: 25rem;
+  height: 4rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 219, 151, 0.5);
+  transition: transform 0.3s;
+}
+.main__welcome__btn__text {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+.main__welcome__btn:hover::before {
+  transform: translate(0);
+}
