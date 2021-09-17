@@ -53,6 +53,7 @@ body {
   top: 100%;
   background: #000;
   width: 75%;
+  max-width: 30rem;
   height: 0.1rem;
 }
 .main__welcome__userForm__form-control__label {
@@ -77,19 +78,19 @@ body {
   border-radius: 1.5rem;
   cursor: pointer;
   overflow: hidden;
-  background: rgba(201, 173, 121, 0.5);
+  background: #005281;
 }
 .main__welcome__btn::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(-25rem);
+  transform: scale(0);
   width: 25rem;
   height: 4rem;
   border-radius: 1.5rem;
-  background: rgba(255, 219, 151, 0.5);
-  transition: transform 0.3s;
+  background: #007dc5;
+  transition: transform 0.3s ease-out;
 }
 .main__welcome__btn__text {
   position: relative;
@@ -99,5 +100,5 @@ body {
   text-shadow: 1px 1px 3px #000;
 }
 .main__welcome__btn:hover::before {
-  transform: translate(0);
+  transform: scale(1);
 }
