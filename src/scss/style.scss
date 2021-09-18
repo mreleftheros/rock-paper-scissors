@@ -5,14 +5,18 @@
   background: rgb(255, 223, 223);
   position: relative;
 
+  &__welcome.active {
+    display: flex;
+  }
+
   &__welcome {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    display: none;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width:90%;
     max-width: 60rem;
@@ -44,6 +48,15 @@
         text-align: center;
         font-size: 2.5rem;
         border-bottom: solid 2px;
+      }
+
+      &__message {
+        font-size: 4rem;
+        text-align: center;
+
+        &__username {
+          font-weight: bold;
+        }
       }
     }
 
