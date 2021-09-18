@@ -36,39 +36,28 @@ body {
   background: white;
   border-radius: 1rem;
 }
-.main__welcome__userForm {
-  width: 100%;
-  padding: 0.5rem;
-  height: 40vh;
-}
-.main__welcome__userForm__form-control {
+.main__welcome__form-control {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.5rem;
+  height: 40vh;
 }
-.main__welcome__userForm__form-control::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  background: #000;
-  width: 75%;
-  max-width: 30rem;
-  height: 0.1rem;
-}
-.main__welcome__userForm__form-control__label {
+.main__welcome__form-control__label {
   position: relative;
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 2rem;
   font-weight: bold;
 }
-.main__welcome__userForm__form-control__input {
+.main__welcome__form-control__input {
   padding: 0.5rem;
   border: none;
   outline: none;
   text-align: center;
   font-size: 2.5rem;
+  border-bottom: solid 2px;
 }
 .main__welcome__btn {
   position: relative;
