@@ -1,16 +1,11 @@
-import { addToLocalStorage } from "./localstorage";
 import UI from "./ui";
 
-// variables
-const usernameInput = document.getElementById("usernameInput");
-
-// function which takes current value of username and saves it localStorage
-const handleUsernameInput = e => {
-  let usernameValue = e.currentTarget.value.trim();
-
-  addToLocalStorage(usernameValue);
-};
+const init = () => {
+  // ui
+  const ui = new UI();
+  
+  ui.renderIntro();
+}
 
 // event listeners
-usernameInput.addEventListener("input", handleUsernameInput);
-document.addEventListener("DOMContentLoaded", UI.renderIntro);
+document.addEventListener("DOMContentLoaded", init);
