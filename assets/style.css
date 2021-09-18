@@ -20,14 +20,17 @@ body {
   background: #ffdfdf;
   position: relative;
 }
+.main__welcome.active {
+  display: flex;
+}
 .main__welcome {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
+  display: none;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 90%;
   max-width: 60rem;
@@ -58,6 +61,13 @@ body {
   text-align: center;
   font-size: 2.5rem;
   border-bottom: solid 2px;
+}
+.main__welcome__intro__message {
+  font-size: 4rem;
+  text-align: center;
+}
+.main__welcome__intro__message__username {
+  font-weight: bold;
 }
 .main__welcome__btn {
   position: relative;
