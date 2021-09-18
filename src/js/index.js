@@ -1,6 +1,8 @@
+import { addToLocalStorage } from "./localstorage";
+import UI from "./ui";
+
 // variables
 const usernameInput = document.getElementById("usernameInput");
-const title = document.getElementById("title");
 
 // function which takes current value of username and saves it localStorage
 const handleUsernameInput = e => {
@@ -11,3 +13,4 @@ const handleUsernameInput = e => {
 
 // event listeners
 usernameInput.addEventListener("input", handleUsernameInput);
+document.addEventListener("DOMContentLoaded", UI.renderIntro);
