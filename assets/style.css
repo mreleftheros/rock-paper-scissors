@@ -36,7 +36,7 @@ body {
   background: white;
   border-radius: 1rem;
 }
-.main__welcome__form-control {
+.main__welcome__intro {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -44,14 +44,14 @@ body {
   padding: 0.5rem;
   height: 40vh;
 }
-.main__welcome__form-control__label {
+.main__welcome__intro__label {
   position: relative;
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 2rem;
   font-weight: bold;
 }
-.main__welcome__form-control__input {
+.main__welcome__intro__input {
   padding: 0.5rem;
   border: none;
   outline: none;
