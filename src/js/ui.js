@@ -56,9 +56,9 @@ class UI {
       <div class="main__game__player">
         <h2 class="main__game__player__title">${this.username}</h2>
         <div class="main__game__player__hands" id="hands">
-          <span class="main__game__player__hands__hand rock">&#128074;</span>
-          <span class="main__game__player__hands__hand paper">&#9995;</span>
-          <span class="main__game__player__hands__hand scissors">&#129310;</span>
+          <span class="main__game__player__hands__hand" data-hand="rock">&#128074;</span>
+          <span class="main__game__player__hands__hand" data-hand="paper">&#9995;</span>
+          <span class="main__game__player__hands__hand" data-hand="scissors">&#129310;</span>
         </div>
         <div class="main__game__player__score">
           <span class="main__game__player__score__text">Score</span>
