@@ -1,4 +1,5 @@
 @import "defaults";
+@import "mixins";
 
 .main {
   height: 100vh;
@@ -93,6 +94,95 @@
 
       &:hover::before {
         transform: scale(1);
+      }
+    }
+  }
+
+  &__game {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 80rem;
+    height: 90vh;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    @include mq(768px) {
+      flex-direction: row;
+    }
+
+    &__player:first-of-type {
+      background: rgb(218, 218, 253);
+    }
+
+    &__player:last-of-type {
+      background: rgb(255, 205, 205);
+    }
+
+    &__player {
+      flex: 1 1 40rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 2px gray;
+
+      &__title {
+        flex: 1;
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+
+      &__hands {
+        flex: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__hand {
+          display: block;
+          font-size: 5rem;
+          background: #fff;
+          border-radius: 50%;
+          margin: 0 1rem;
+          padding: 1rem;
+          text-align: center;
+          box-shadow: 0 0 3px #000;
+          transition: transform .3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__score {
+        flex: 1;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__text {
+          display: block;
+          font-size: 2.5rem;
+        }
+
+        &__value {
+          display: block;
+          font-size: 3.5rem;
+          font-weight: bold;
+        }
       }
     }
   }

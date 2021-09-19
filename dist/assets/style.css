@@ -101,3 +101,82 @@ body {
 .main__welcome__btn:hover::before {
   transform: scale(1);
 }
+.main__game {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 80rem;
+  height: 90vh;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .main__game {
+    flex-direction: row;
+  }
+}
+.main__game__player:first-of-type {
+  background: #dadafd;
+}
+.main__game__player:last-of-type {
+  background: #ffcdcd;
+}
+.main__game__player {
+  flex: 1 1 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 2px gray;
+}
+.main__game__player__title {
+  flex: 1;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.main__game__player__hands {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__game__player__hands__hand {
+  display: block;
+  font-size: 5rem;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 3px #000;
+  transition: transform 0.3s ease-in-out;
+}
+.main__game__player__hands__hand:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.main__game__player__score {
+  flex: 1;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main__game__player__score__text {
+  display: block;
+  font-size: 2.5rem;
+}
+.main__game__player__score__value {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: bold;
+}

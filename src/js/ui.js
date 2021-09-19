@@ -4,6 +4,7 @@ import Game from "./game";
 class UI {
   constructor() {
     this.intro = document.getElementById("intro");
+    this.container = document.getElementById("main");
     this.welcomeScreen;
     this.usernameInput;
   }
@@ -46,6 +47,10 @@ class UI {
   renderGame() {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
+
+    let html = `
+    
+    `;
   }
 }
 
