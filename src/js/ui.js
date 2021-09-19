@@ -1,4 +1,4 @@
-import { addToLocalStorage, checkLocalStorage } from "./localstorage";
+import { addToLocalStorage, checkLocalStorage, getFromLocalStorage } from "./localstorage";
 import Game from "./game";
 
 class UI {
@@ -8,6 +8,7 @@ class UI {
     this.welcomeScreen;
     this.gameScreen;
     this.usernameInput;
+    this.username;
   }
 
   renderIntro() {
@@ -48,11 +49,12 @@ class UI {
   renderGame() {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
+    this.username = getFromLocalStorage();
     
     let html = `
     <section class="main__game" id="gameScreen">
       <div class="main__game__player">
-        <h2 class="main__game__player__title">mreleftheros</h2>
+        <h2 class="main__game__player__title">${this.username}</h2>
         <div class="main__game__player__hands" id="hands">
           <span class="main__game__player__hands__hand rock">&#128074;</span>
           <span class="main__game__player__hands__hand paper">&#9995;</span>

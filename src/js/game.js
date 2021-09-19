@@ -1,9 +1,8 @@
 
 
 class Game {
-  constructor(username) {
+  constructor() {
     this.hands;
-    this.username = username;
     this.currentPlayerHand;
     this.currentPCHand;
   }

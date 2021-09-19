@@ -9,6 +9,8 @@ const addToLocalStorage = username => {
 };
 
 // returns current value of username from localStorage
+const getFromLocalStorage = () => {
+  return localStorage.getItem("username");
+};
 
-
-export { addToLocalStorage, checkLocalStorage };
+export { addToLocalStorage, checkLocalStorage, getFromLocalStorage };
