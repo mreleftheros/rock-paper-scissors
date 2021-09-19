@@ -6,6 +6,7 @@ class UI {
     this.intro = document.getElementById("intro");
     this.container = document.getElementById("main");
     this.welcomeScreen;
+    this.gameScreen;
     this.usernameInput;
   }
 
@@ -47,10 +48,34 @@ class UI {
   renderGame() {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
-
-    let html = `
     
+    let html = `
+    <section class="main__game" id="gameScreen">
+      <div class="main__game__player">
+        <h2 class="main__game__player__title">mreleftheros</h2>
+        <div class="main__game__player__hands" id="hands">
+          <span class="main__game__player__hands__hand rock">&#128074;</span>
+          <span class="main__game__player__hands__hand paper">&#9995;</span>
+          <span class="main__game__player__hands__hand scissors">&#129310;</span>
+        </div>
+        <div class="main__game__player__score">
+          <span class="main__game__player__score__text">Score</span>
+          <span class="main__game__player__score__value">0</span>
+        </div>
+      </div>
+
+      <div class="main__game__player">
+        <h2 class="main__game__player__title">PC</h2>
+        <div class="main__game__player__hands"></div>
+        <div class="main__game__player__score">
+          <span class="main__game__player__score__text">Score</span>
+          <span class="main__game__player__score__value">0</span>
+        </div>
+      </div>
+    </section>
     `;
+
+    this.container.innerHTML = html;
   }
 }
 

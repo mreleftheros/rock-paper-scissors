@@ -9,7 +9,7 @@ const init = () => {
   const ui = new UI();
   ui.renderIntro();
 
-  //game
+  // game
   const game = new Game();
 
   //event listeners
