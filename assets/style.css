@@ -181,4 +181,6 @@ body {
   display: block;
   font-size: 3.5rem;
   font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
 }
