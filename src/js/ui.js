@@ -1,14 +1,13 @@
-import { addToLocalStorage, checkLocalStorage, getFromLocalStorage } from "./localstorage";
+import { addToLocalStorage, checkLocalStorage } from "./localstorage";
 import Game from "./game";
 
 class UI {
   constructor() {
     this.intro = document.getElementById("intro");
-    this.container = document.getElementById("main");
+    this.container;
     this.welcomeScreen;
     this.gameScreen;
     this.usernameInput;
-    this.username;
   }
 
   renderIntro() {
@@ -49,12 +48,13 @@ class UI {
   renderGame() {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
-    this.username = getFromLocalStorage();
+    this.container = document.getElementById("main");
+    const game = new Game();
     
     let html = `
     <section class="main__game" id="gameScreen">
       <div class="main__game__player">
-        <h2 class="main__game__player__title">${this.username}</h2>
+        <h2 class="main__game__player__title">${game.username}</h2>
         <div class="main__game__player__hands" id="hands">
           <span class="main__game__player__hands__hand" data-hand="rock">&#128074;</span>
           <span class="main__game__player__hands__hand" data-hand="paper">&#9995;</span>
@@ -78,7 +78,8 @@ class UI {
     `;
 
     this.container.innerHTML = html;
+    game.init();
   }
 }
 
-export { UI as default };
+export default UI;

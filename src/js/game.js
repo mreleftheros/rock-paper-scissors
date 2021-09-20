@@ -1,7 +1,10 @@
+import { getFromLocalStorage } from "./localstorage";
+
 class Game {
   constructor() {
     this.handsContainer;
     this.handOptions;
+    this.username = getFromLocalStorage();
     this.playerHand;
     this.PCHand;
     this.playerScore = 0;
@@ -12,7 +15,7 @@ class Game {
   init() {
     this.handsContainer = document.getElementById("hands");
     
-    this.handsContainer.addEventListener("click", this.chooseHand);
+    this.handsContainer.addEventListener("click", e => this.chooseHand(e));
   }
   
   chooseHand(e) {
@@ -71,4 +74,4 @@ class Game {
   }
 }
 
-export { Game as default };
+export default Game;
