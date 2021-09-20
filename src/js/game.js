@@ -7,15 +7,17 @@ class Game {
     this.playerScore = 0;
     this.PCScore = 0;
     this.winningScore = 3;
+    this.isPlaying;
   }
 
   init() {
+    this.isPlaying = true;
     this.handsContainer = document.getElementById("hands");
     
-    this.handsContainer.addEventListener("click", e => this.chooseHand(e));
+    this.handsContainer.addEventListener("click", e => this.playHand(e));
   }
   
-  chooseHand(e) {
+  playHand(e) {
     if (e.target.tagName !== "SPAN") return; // check
     
     this.handOptions = ["rock", "paper", "scissors"];
@@ -24,8 +26,14 @@ class Game {
     this.playerHand = e.target.getAttribute("data-hand");
     this.PCHand = this.handOptions[randomIndex];
 
-    this.updateScore();
-    this.updateScoresUI();
+    if (this.isPlaying) {
+      this.updateScore();
+      this.updateScoresUI();
+    }
+    
+    if (this.playerScore === this.winningScore || this.pcScore === this.winningScore) {
+      this.endGame();
+    }
   }
 
   updateScore() {
@@ -75,6 +83,14 @@ class Game {
 
     playerScoreElement.textContent = this.playerScore;
     pcScoreElement.textContent = this.PCScore;
+  }
+
+  endGame() {
+    this.playerScore = 0;
+    this.pcScore = 0;
+    this.isPlaying = false;
+
+    console.log(this.playerScore, this.pcScore, "Game finished");
   }
 }
 
