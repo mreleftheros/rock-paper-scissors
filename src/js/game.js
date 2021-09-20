@@ -91,11 +91,17 @@ class Game {
     this.isPlaying = false;
 
     console.log(this.playerScore, this.pcScore, "Game finished");
+    this.playWinningSound();
   }
 
   playWinningSound() {
     const audio = new Audio();
-    
+    audio.src = "./assets/clap.mp3";
+
+    document.body.appendChild(audio);
+
+    audio.play();
+    audio.onended = audio.remove;
   }
 }
 

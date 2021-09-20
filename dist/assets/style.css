@@ -160,6 +160,7 @@ body {
   text-align: center;
   box-shadow: 0 0 3px #000;
   transition: transform 0.3s ease-in-out;
+  outline: none;
 }
 .main__game__player__hands__hand:hover {
   transform: scale(1.1);

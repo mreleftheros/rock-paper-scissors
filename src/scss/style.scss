@@ -159,6 +159,7 @@
           text-align: center;
           box-shadow: 0 0 3px #000;
           transition: transform .3s ease-in-out;
+          outline: none;
 
           &:hover {
             transform: scale(1.1);
