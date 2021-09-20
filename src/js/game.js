@@ -5,7 +5,7 @@ class Game {
     this.playerHand;
     this.PCHand;
     this.playerScore = 0;
-    this.PCScore = 0;
+    this.pcScore = 0;
     this.winningScore = 3;
     this.isPlaying;
   }
@@ -43,7 +43,7 @@ class Game {
           case "rock":
           break;
           case "paper":
-            this.PCScore++;
+            this.pcScore++;
           break;
           case "scissors":
             this.playerScore++;
@@ -58,14 +58,14 @@ class Game {
           case "paper":
           break;
           case "scissors":
-            this.PCScore++;
+            this.pcScore++;
           break;
         }
       break;
       case "scissors":
         switch (this.PCHand) {
           case "rock":
-            this.PCScore++;
+            this.pcScore++;
           break;
           case "paper":
             this.playerScore++;
@@ -82,7 +82,7 @@ class Game {
     const pcScoreElement = document.querySelector(".pc-score");
 
     playerScoreElement.textContent = this.playerScore;
-    pcScoreElement.textContent = this.PCScore;
+    pcScoreElement.textContent = this.pcScore;
   }
 
   endGame() {
@@ -91,6 +91,11 @@ class Game {
     this.isPlaying = false;
 
     console.log(this.playerScore, this.pcScore, "Game finished");
+  }
+
+  playWinningSound() {
+    const audio = new Audio();
+    
   }
 }
 
