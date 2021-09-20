@@ -1,10 +1,7 @@
-import { getFromLocalStorage } from "./localstorage";
-
 class Game {
   constructor() {
     this.handsContainer;
     this.handOptions;
-    this.username = getFromLocalStorage();
     this.playerHand;
     this.PCHand;
     this.playerScore = 0;
@@ -28,6 +25,7 @@ class Game {
     this.PCHand = this.handOptions[randomIndex];
 
     this.updateScore();
+    this.updateScoresUI();
   }
 
   updateScore() {
@@ -69,8 +67,14 @@ class Game {
         }
       break;
     }
+  }
 
-    console.log(this.playerScore, this.PCScore)
+  updateScoresUI() {
+    const playerScoreElement = document.querySelector(".player-score");
+    const pcScoreElement = document.querySelector(".pc-score");
+
+    playerScoreElement.textContent = this.playerScore;
+    pcScoreElement.textContent = this.PCScore;
   }
 }
 

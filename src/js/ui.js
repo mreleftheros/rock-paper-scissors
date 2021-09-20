@@ -1,10 +1,10 @@
-import { addToLocalStorage, checkLocalStorage } from "./localstorage";
-import Game from "./game";
+import { addToLocalStorage, checkLocalStorage, getFromLocalStorage } from "./localstorage";
 
 class UI {
   constructor() {
     this.intro = document.getElementById("intro");
     this.container;
+    this.username;
     this.welcomeScreen;
     this.gameScreen;
     this.usernameInput;
@@ -15,10 +15,10 @@ class UI {
     let usernameExists = checkLocalStorage();
 
     if (usernameExists) {
-      let username = localStorage.getItem("username");
+      this.username = getFromLocalStorage();
       html = `
         <p class="main__welcome__intro__message">
-          Welcome back, <span class="main__welcome__intro__message__username">${username}</span>!
+          Welcome back, <span class="main__welcome__intro__message__username">${this.username}</span>!
         </p>
         <button type="button" class="main__welcome__intro__"
       `;
@@ -49,12 +49,12 @@ class UI {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
     this.container = document.getElementById("main");
-    const game = new Game();
+    this.username = getFromLocalStorage();
     
     let html = `
     <section class="main__game" id="gameScreen">
       <div class="main__game__player">
-        <h2 class="main__game__player__title">${game.username}</h2>
+        <h2 class="main__game__player__title">${this.username}</h2>
         <div class="main__game__player__hands" id="hands">
           <span class="main__game__player__hands__hand" data-hand="rock">&#128074;</span>
           <span class="main__game__player__hands__hand" data-hand="paper">&#9995;</span>
@@ -62,7 +62,7 @@ class UI {
         </div>
         <div class="main__game__player__score">
           <span class="main__game__player__score__text">Score</span>
-          <span class="main__game__player__score__value">0</span>
+          <span class="main__game__player__score__value player-score">0</span>
         </div>
       </div>
 
@@ -71,14 +71,13 @@ class UI {
         <div class="main__game__player__hands"></div>
         <div class="main__game__player__score">
           <span class="main__game__player__score__text">Score</span>
-          <span class="main__game__player__score__value">0</span>
+          <span class="main__game__player__score__value pc-score">0</span>
         </div>
       </div>
     </section>
     `;
 
     this.container.innerHTML = html;
-    game.init();
   }
 }
 
