@@ -18,7 +18,7 @@ class Game {
   }
   
   playHand(e) {
-    if (e.target.tagName !== "SPAN") return; // check
+    if (e.target.tagName !== "BUTTON") return; // check
     
     this.handOptions = ["rock", "paper", "scissors"];
     let randomIndex = Math.floor(Math.random() * this.handOptions.length);
@@ -90,7 +90,6 @@ class Game {
     this.pcScore = 0;
     this.isPlaying = false;
 
-    console.log(this.playerScore, this.pcScore, "Game finished");
     this.playWinningSound();
   }
 
