@@ -11,6 +11,10 @@ class UI {
     this.usernameInput;
   }
 
+  renderRestartScreen() {
+    const divElement = document.createElement("div");
+  }
+
   updateHands(e, html) {
     const hand = e.target;
     hand.classList.add("active");
@@ -24,9 +28,9 @@ class UI {
     pcHandsContainer.appendChild(buttonElement);
    
     if (game.playerScore === game.winningScore || game.pcScore === game.winningScore) {
-      game.endGame();
       hand.classList.remove("active");
       buttonElement.remove();
+      game.endGame();
       return;
     }
     setTimeout(() => {

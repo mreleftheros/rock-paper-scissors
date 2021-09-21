@@ -91,6 +91,7 @@ class Game {
     this.isPlaying = false;
 
     this.playWinningSound();
+    ui.renderRestartScreen();
   }
 
   playWinningSound() {
