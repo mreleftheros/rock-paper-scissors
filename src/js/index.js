@@ -1,4 +1,4 @@
-import UI from "./ui";
+import ui from "./ui";
 import Game from "./game";
 
 const init = () => {
@@ -6,7 +6,6 @@ const init = () => {
   const startBtn = document.getElementById("startBtn");
 
   // ui
-  const ui = new UI();
   ui.renderIntro();
 
   // game

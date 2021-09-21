@@ -1,3 +1,5 @@
+import ui from "./ui";
+
 class Game {
   constructor() {
     this.handsContainer;

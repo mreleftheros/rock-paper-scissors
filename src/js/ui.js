@@ -81,4 +81,6 @@ class UI {
   }
 }
 
-export default UI;
+const ui = new UI();
+
+export default ui;
