@@ -213,4 +213,5 @@ body {
 .main__restart__result {
   font-size: 5rem;
   letter-spacing: 0.1rem;
+  font-weight: bold;
 }

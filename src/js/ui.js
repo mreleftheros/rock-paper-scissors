@@ -20,6 +20,8 @@ class UI {
     const pElement = document.createElement("p");
     pElement.classList.add("main__restart__result");
     pElement.textContent = game.result;
+    let resultColor = game.result === "You Win!" ? "limegreen" : "crimson";
+    pElement.style.color = resultColor;
 
     const buttonElement = document.createElement("button");
     buttonElement.setAttribute("type", "button");
