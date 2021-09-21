@@ -9,19 +9,27 @@ class Game {
     this.playerScore = 0;
     this.pcScore = 0;
     this.winningScore = 3;
-    this.isPlaying;
+    this.isPlaying = false;
   }
 
   init() {
-    this.isPlaying = true;
+    this.reset();
     this.handsContainer = document.getElementById("hands");
     
     this.handsContainer.addEventListener("click", e => this.playHand(e));
   }
+
+  reset() {
+    this.playerScore = 0;
+    this.pcScore = 0;
+    this.isPlaying = true;
+  }
   
   playHand(e) {
-    if (e.target.tagName !== "BUTTON") return; // check
+    if (e.target.tagName !== "BUTTON" || !this.isPlaying) return; // check
     
+    this.isPlaying = false;
+
     this.handOptions = [
       {value: "rock", html: "&#128074;"},
       {value: "paper", html: "&#129306;"},
@@ -33,15 +41,9 @@ class Game {
     let pcHandHTML = this.handOptions[randomIndex].html;
     this.pcHand = this.handOptions[randomIndex].value;
 
-    if (this.isPlaying) {
-      ui.updateHands(e, pcHandHTML);
-      this.updateScore();
-      ui.updateScores(this.playerScore, this.pcScore);
-    }
-    
-    if (this.playerScore === this.winningScore || this.pcScore === this.winningScore) {
-      this.endGame();
-    }
+    this.updateScore();
+    ui.updateScores(this.playerScore, this.pcScore);
+    ui.updateHands(e, pcHandHTML);
   }
 
   updateScore() {
@@ -86,8 +88,6 @@ class Game {
   }
 
   endGame() {
-    this.playerScore = 0;
-    this.pcScore = 0;
     this.isPlaying = false;
 
     this.playWinningSound();
@@ -104,4 +104,6 @@ class Game {
   }
 }
 
-export default Game;
+const game = new Game();
+
+export default game;

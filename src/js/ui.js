@@ -1,4 +1,5 @@
 import { addToLocalStorage, checkLocalStorage, getFromLocalStorage } from "./localstorage";
+import game from "./game";
 
 class UI {
   constructor() {
@@ -15,9 +16,24 @@ class UI {
     hand.classList.add("active");
 
     const pcHandsContainer = document.getElementById("pc").querySelector(".main__game__player__hands");
-    pcHandsContainer.innerHTML = `
-      <button class="main__game__player__hands__hand">${html}</button>
-    `;
+
+    const buttonElement = document.createElement("button");
+    buttonElement.className = "main__game__player__hands__hand pc";
+    buttonElement.innerHTML = html;
+    
+    pcHandsContainer.appendChild(buttonElement);
+   
+    if (game.playerScore === game.winningScore || game.pcScore === game.winningScore) {
+      game.endGame();
+      hand.classList.remove("active");
+      buttonElement.remove();
+      return;
+    }
+    setTimeout(() => {
+      hand.classList.remove("active");
+      buttonElement.remove();
+      game.isPlaying = true;
+    }, 500)
   }
 
   updateScores(playerScore, pcScore) {

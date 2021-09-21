@@ -149,6 +149,15 @@
         justify-content: center;
         align-items: center;
 
+        &__hand.active {
+          background: rgb(137, 137, 255);
+          transform: scale(1.1);
+        }
+
+        &__hand.pc {
+          background: rgb(248, 140, 140);
+        }
+
         &__hand {
           display: block;
           font-size: 5rem;
@@ -158,13 +167,10 @@
           padding: 1rem;
           text-align: center;
           box-shadow: 0 0 3px #000;
-          transition: transform .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          transform: scale(1) translate(0);
           outline: none;
-
-          &:hover {
-            transform: scale(1.1);
-            cursor: pointer;
-          }
+          cursor: pointer;
         }
       }
 

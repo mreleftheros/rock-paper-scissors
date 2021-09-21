@@ -1,5 +1,5 @@
 import ui from "./ui";
-import Game from "./game";
+import game from "./game";
 
 const init = () => {
   // variables
@@ -7,9 +7,6 @@ const init = () => {
 
   // ui
   ui.renderIntro();
-
-  // game
-  const game = new Game();
 
   //event listeners
   startBtn.addEventListener("click", () => {

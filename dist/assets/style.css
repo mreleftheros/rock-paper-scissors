@@ -150,6 +150,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+.main__game__player__hands__hand.active {
+  background: #8989ff;
+  transform: scale(1.1);
+}
+.main__game__player__hands__hand.pc {
+  background: #f88c8c;
+}
 .main__game__player__hands__hand {
   display: block;
   font-size: 5rem;
@@ -159,11 +166,9 @@ body {
   padding: 1rem;
   text-align: center;
   box-shadow: 0 0 3px #000;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1) translate(0);
   outline: none;
-}
-.main__game__player__hands__hand:hover {
-  transform: scale(1.1);
   cursor: pointer;
 }
 .main__game__player__score {
