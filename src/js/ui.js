@@ -10,6 +10,16 @@ class UI {
     this.usernameInput;
   }
 
+  updateHands(e, html) {
+    const hand = e.target;
+    hand.classList.add("active");
+
+    const pcHandsContainer = document.getElementById("pc").querySelector(".main__game__player__hands");
+    pcHandsContainer.innerHTML = `
+      <button class="main__game__player__hands__hand">${html}</button>
+    `;
+  }
+
   updateScores(playerScore, pcScore) {
     const playerScoreElement = document.querySelector(".player-score");
     const pcScoreElement = document.querySelector(".pc-score");
@@ -74,7 +84,7 @@ class UI {
         </div>
       </div>
 
-      <div class="main__game__player">
+      <div class="main__game__player" id="pc">
         <h2 class="main__game__player__title">PC</h2>
         <div class="main__game__player__hands"></div>
         <div class="main__game__player__score">

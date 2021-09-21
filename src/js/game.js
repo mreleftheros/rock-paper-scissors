@@ -5,7 +5,7 @@ class Game {
     this.handsContainer;
     this.handOptions;
     this.playerHand;
-    this.PCHand;
+    this.pcHand;
     this.playerScore = 0;
     this.pcScore = 0;
     this.winningScore = 3;
@@ -22,13 +22,19 @@ class Game {
   playHand(e) {
     if (e.target.tagName !== "BUTTON") return; // check
     
-    this.handOptions = ["rock", "paper", "scissors"];
+    this.handOptions = [
+      {value: "rock", html: "&#128074;"},
+      {value: "paper", html: "&#129306;"},
+      {value: "scissors", html: "&#129310;"}
+    ];
     let randomIndex = Math.floor(Math.random() * this.handOptions.length);
     
     this.playerHand = e.target.getAttribute("data-hand");
-    this.PCHand = this.handOptions[randomIndex];
+    let pcHandHTML = this.handOptions[randomIndex].html;
+    this.pcHand = this.handOptions[randomIndex].value;
 
     if (this.isPlaying) {
+      ui.updateHands(e, pcHandHTML);
       this.updateScore();
       ui.updateScores(this.playerScore, this.pcScore);
     }
@@ -41,7 +47,7 @@ class Game {
   updateScore() {
     switch (this.playerHand) {
       case "rock":
-        switch (this.PCHand) {
+        switch (this.pcHand) {
           case "rock":
           break;
           case "paper":
@@ -53,7 +59,7 @@ class Game {
         }
       break;
       case "paper":
-        switch (this.PCHand) {
+        switch (this.pcHand) {
           case "rock":
             this.playerScore++;
           break;
@@ -65,7 +71,7 @@ class Game {
         }
       break;
       case "scissors":
-        switch (this.PCHand) {
+        switch (this.pcHand) {
           case "rock":
             this.pcScore++;
           break;
