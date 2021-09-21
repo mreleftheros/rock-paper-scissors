@@ -9,6 +9,7 @@ class Game {
     this.playerScore = 0;
     this.pcScore = 0;
     this.winningScore = 3;
+    this.result;
     this.isPlaying = false;
   }
 
@@ -22,6 +23,7 @@ class Game {
   reset() {
     this.playerScore = 0;
     this.pcScore = 0;
+    this.result = null;
     this.isPlaying = true;
   }
   
@@ -89,6 +91,7 @@ class Game {
 
   endGame() {
     this.isPlaying = false;
+    this.result = this.playerScore === 3 ? "You Win!" : "You Lose!";
 
     this.playWinningSound();
     ui.renderRestartScreen();

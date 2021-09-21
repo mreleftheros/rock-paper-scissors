@@ -4,15 +4,41 @@ import game from "./game";
 class UI {
   constructor() {
     this.intro = document.getElementById("intro");
-    this.container;
+    this.container = document.getElementById("main");
     this.username;
     this.welcomeScreen;
     this.gameScreen;
+    this.restartScreen;;
     this.usernameInput;
   }
 
   renderRestartScreen() {
     const divElement = document.createElement("div");
+    divElement.className = "main__restart active";
+    divElement.id = "restartScreen";
+
+    const pElement = document.createElement("p");
+    pElement.classList.add("main__restart__result");
+    pElement.textContent = game.result;
+
+    const buttonElement = document.createElement("button");
+    buttonElement.setAttribute("type", "button");
+    buttonElement.classList.add("main__welcome__btn");
+
+    const spanElement = document.createElement("span");
+    spanElement.classList.add("main__welcome__btn__text");
+    spanElement.textContent = "Restart Game";
+
+    buttonElement.addEventListener("click", () => {
+      divElement.remove();
+      game.init();
+      this.updateScores(0, 0);
+    });
+
+    buttonElement.appendChild(spanElement);
+    divElement.appendChild(pElement);
+    divElement.appendChild(buttonElement);
+    this.container.appendChild(divElement);
   }
 
   updateHands(e, html) {
@@ -86,7 +112,6 @@ class UI {
   renderGame() {
     this.welcomeScreen = document.getElementById("welcomeScreen");
     this.welcomeScreen.classList.remove("active");
-    this.container = document.getElementById("main");
     this.username = getFromLocalStorage();
     
     let html = `
