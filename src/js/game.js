@@ -30,7 +30,7 @@ class Game {
 
     if (this.isPlaying) {
       this.updateScore();
-      this.updateScoresUI();
+      ui.updateScores(this.playerScore, this.pcScore);
     }
     
     if (this.playerScore === this.winningScore || this.pcScore === this.winningScore) {
@@ -77,14 +77,6 @@ class Game {
         }
       break;
     }
-  }
-
-  updateScoresUI() {
-    const playerScoreElement = document.querySelector(".player-score");
-    const pcScoreElement = document.querySelector(".pc-score");
-
-    playerScoreElement.textContent = this.playerScore;
-    pcScoreElement.textContent = this.pcScore;
   }
 
   endGame() {

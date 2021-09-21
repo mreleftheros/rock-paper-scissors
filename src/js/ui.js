@@ -10,6 +10,14 @@ class UI {
     this.usernameInput;
   }
 
+  updateScores(playerScore, pcScore) {
+    const playerScoreElement = document.querySelector(".player-score");
+    const pcScoreElement = document.querySelector(".pc-score");
+
+    playerScoreElement.textContent = playerScore;
+    pcScoreElement.textContent = pcScore;
+  }
+
   renderIntro() {
     let html;
     let usernameExists = checkLocalStorage();
